@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DiSC Login</title>
+  <link rel="stylesheet" href="./login page/styles.css">
+</head>
+<body>
+    <img src="./login page/img/High-Resolution-Logo-Black-on-White-Background.png" alt="logo" class="login-img">
+  <div class="login-container" id="login-form">
+    <form class="login-form">
+      <label for="username">Username</label>
+      <input type="text" id="username" placeholder="Enter Username" required>
+
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password" placeholder="Enter Password" required>
+
+      <button type="submit" id="submit">Login</button>
+    </form>
+    <p id="error-message" style="color: red; display: none; margin-top: 50px;">Invalid username or password</p>
+  </div>
+  <script src="./login page/input.js"></script>
+</body>
+</html>

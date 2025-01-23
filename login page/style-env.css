@@ -1,0 +1,153 @@
+body {
+    margin: 0;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    background-color : #f9f9f9;
+    display: flex;
+    flex-direction: column; /* Stack header and container vertically */
+    min-height: 100vh; /* Full viewport height */
+  }
+  
+  /* Header Styles */
+  header {
+    display: flex;
+    justify-content: space-between; /* Space out the elements */
+    align-items: center;
+    padding: 10px 20px;
+    width: 100%; /* Full width of the viewport */
+    background-color: rgb(33, 156, 156, 0.5); /* Blue background */
+    color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: sticky; /* Keep the header fixed at the top */
+    top: 0;
+    z-index: 1000; /* Ensure it stays above other content */
+  }
+  
+  /* Application Logo (Left) */
+  .app-logo {
+    height: 80px; /* Adjust height for consistency */
+    width: auto;
+    margin-left: 20px;
+  }
+  
+  /* Company Logo (Right) */
+  .company-logo {
+    height: 40px; /* Adjust height for consistency */
+    width: auto;
+    margin-right: 60px;
+  }
+  
+  /* Logout Button (Center) */
+  #logout-btn {
+    background-color: #a1281f; /* Red color */
+    color: whitesmoke;
+    font-family: 'Times New Roman', Times, serif;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    margin-right: 35px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+  }
+  
+  #logout-btn:hover {
+    background-color: #d32f2f;
+  }
+  
+  /* Container Styles */
+  .container {
+    text-align: center;
+    padding-top: 60px;
+    margin: auto; /* Center the container vertically and horizontally */
+    width: 100%;
+    max-width: 1000px;
+    flex: 1; /* Make the container take up available space */
+  }
+  
+  h1 {
+    font-size: 36px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    margin-bottom: 20px;
+    color: #474646;
+  }
+  
+  /* Environment Card Section */
+  .environment-options {
+    padding-top: 50px;
+    display: flex;
+    justify-content: space-between;
+    gap: 80px;
+  }
+  
+  /* Card Styles */
+  .env-card {
+    background-color: #ffffff;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    padding: 30px;
+    width: 60%; /* Adjust card width */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    position: relative;
+  }
+  
+  .env-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+  
+  .env-card h2 {
+    font-size: 28px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    margin-bottom: 5px;
+    color: #444;
+  }
+  
+  .env-card p {
+    font-size: 15px;
+    opacity: 0; /* Hide description text by default */
+    height: auto; /* Collapse height */
+    overflow: hidden; /* Prevent invisible content from showing */
+    transition: opacity 0.3s ease, height 0.3s ease;
+    margin: 0;
+  }
+  
+  .env-card:hover p {
+    opacity: 1; /* Show description text on hover */
+    height: auto; /* Expand height */
+  }
+  
+  .env-card .icon {
+    font-size: 48px;
+    margin-top: 0;
+    color: #0073e6;
+  }
+  
+  #test .icon {
+    color: #f39c12; /* Orange for Test */
+    margin-bottom: 30px;
+  }
+  
+  #production .icon {
+    color: #e67e22; /* Orange for Production */
+    margin-top: 10px;
+  }
+  
+  #development .icon {
+    color: #3498db; /* Blue for Development */
+  }
+
+  .footer {
+    background-color: rgb(33, 156, 156, 0.4); /* Blue background */
+    color: white;
+    text-align: center;
+    width: 100%;
+    position: sticky;
+    bottom: 0;
+  }
+
+  .footer p {
+    padding: 5px;
+    margin: 0;
+  }

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Development Environment</title>
+</head>
+<body>
+  <header>
+    <h1>Development Environment</h1>
+    <button id="logout-btn">Logout</button>
+  </header>
+  <div>
+    <p>Build, customize, and debug your application in a flexible environment.</p>
+    <br>
+    <p>Under construction &#128526</p>
+  </div>
+  <script>
+    document.getElementById("logout-btn").addEventListener("click", () => {
+      localStorage.clear();
+      window.location.href = "../index.html";
+    });
+  </script>
+</body>
+</html>

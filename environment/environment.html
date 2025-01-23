@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Environment Selection</title>
+  <link rel="stylesheet" href="../login page/style-env.css">
+</head>
+<body>
+  <header>
+        <img src="../login page/img/Without-Icon-White.png" alt="Application Logo" class="app-logo">
+        <button id="logout-btn">Logout</button>
+        <img src="../login page/img/ferguson-logo.png" alt="Company Logo" class="company-logo">
+  </header>
+
+  <div class="container">
+        <h1>Select Your Environment</h1>
+    <hr>
+  
+    <div class="environment-options">
+      <!-- Test Environment -->
+      <div class="env-card" id="test">
+        <h2>Test</h2>
+        <p>Test and validate your digital workflows in a secure, isolated environment.</p>
+        <div class="icon">🧪</div>
+      </div>
+
+      <!-- Production Environment -->
+      <div class="env-card" id="production">
+        <h2>Production</h2>
+        <p>The live, secure hub for managing digital operations.</p>
+        <div class="icon icon2">🚀</div>
+      </div>
+
+      <!-- Development Environment -->
+      <div class="env-card" id="development">
+        <h2>Development</h2>
+        <p>Build, customize, and debug your application in a flexible environment.</p>
+        <div class="icon">⚙️</div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <p>&copy; 2025 DiSC. All rights reserved.</p>
+    </footer>
+
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+          // Retrieve the logged-in user and role
+          const username = localStorage.getItem("loggedInUser");
+          const userRole = parseInt(localStorage.getItem("userRole"), 10);
+    
+          if (!username || !userRole) {
+            alert("Please log in first.");
+            window.location.href = "../index.html"; // Redirect to login if not logged in
+          } else {
+            // Role-based logic
+            if (userRole === 1) {
+              // Role 1: Access all cards
+              document.getElementById("test").style.display = "block";
+              document.getElementById("production").style.display = "block";
+              document.getElementById("development").style.display = "block";
+            } else if (userRole === 2) {
+              // Role 2: Access Test and Production only
+              document.getElementById("test").style.display = "block";
+              document.getElementById("production").style.display = "block";
+              document.getElementById("development").style.display = "none";
+            } else if (userRole === 3) {
+              // Role 3: Auto-redirect to Production
+              window.location.href = "../production/production.html";
+            }
+          }
+
+    const productionCard = document.getElementById("production");
+
+  if (productionCard) {
+    productionCard.addEventListener("click", () => {
+      // Redirect to the Production page
+      window.location.href = "../production/production.html";
+    });
+  }
+
+  // Click events for other test card
+  const testCard = document.getElementById("test");
+  if (testCard) {
+    testCard.addEventListener("click", () => {
+        window.location.href = "../test/test.html";
+      // Add redirection logic for Test Environment if needed
+    });
+  }
+
+  const developmentCard = document.getElementById("development");
+  if (developmentCard) {
+    developmentCard.addEventListener("click", () => {
+        window.location.href = "../development/development.html";
+      // Add redirection logic for Development Environment if needed
+    });
+  }
+
+    
+          // Logout button functionality
+          document.getElementById("logout-btn").addEventListener("click", () => {
+            localStorage.clear(); // Clear all stored data
+            window.location.href = "../index.html";
+          });
+        });
+      </script>
+</body>
+</html>
