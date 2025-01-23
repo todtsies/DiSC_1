@@ -21,11 +21,11 @@ document.getElementById("login-form").addEventListener("submit", function (event
       // Redirect based on role
       const role = users[username].role;
       if (role === 1) {
-        window.location.href = "../environment/environment.html"; // Access all environments
+        window.location.href = "./environment/environment.html"; // Access all environments
       } else if (role === 2) {
-        window.location.href = "../environment/environment.html"; // Restricted to Test and Production
+        window.location.href = "./environment/environment.html"; // Restricted to Test and Production
       } else if (role === 3) {
-        window.location.href = "../production/production.html"; // Auto-load Production
+        window.location.href = "./production/production.html"; // Auto-load Production
       }
     } else {
       // Show error message
