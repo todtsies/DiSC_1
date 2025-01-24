@@ -101,3 +101,8 @@ var donutChart = new Chart(ctx, {
         responsive: true
     }
 });
+
+const advancedSearchBtn = document.getElementById("advancedsearch");
+        advancedSearchBtn.addEventListener("click", () => {
+            window.location.href = "search.html";
+        });
