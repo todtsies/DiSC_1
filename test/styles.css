@@ -1,0 +1,119 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.card-columns {
+    display: inline-block;
+    margin: 30px;
+
+    @media (min-width: 992px) and (max-width: 1199.98px) {
+        .card-columns {
+            column-count: 4;
+        }
+    }
+
+    @media (min-width: 1200px) {
+        .card-columns {
+            column-count: 5;
+        }
+    }
+}
+
+
+.blue-header {
+    background-color: #007bff;
+    color: #ffffff;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.blue-header .title {
+    font-size: 30px;
+    font-weight: normal;
+    text-align: center;
+    padding-left: 150px;
+    flex: 1;
+    font-family: 'Times New Roman', Times, serif;
+    letter-spacing: 1px;
+}
+
+.blue-header .buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.blue-header button {
+    background-color: #0056b3;
+    color: #ffffff;
+    border: none;
+    padding: 8px 15px;
+    font-size: 14px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.blue-header button:hover {
+    background-color: #004494;
+}
+
+#hamburger-menu {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: white;
+    position: relative;
+    z-index: 1002;
+}
+
+/* Sidebar Styles */
+.sidebar {
+    width: 250px;
+    background-color: #333;
+    color: white;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow: auto;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-in-out;
+    z-index: 1000;
+    padding-top: 60px;
+}
+
+.sidebar.hidden {
+    transform: translateX(-100%);
+}
+
+.sidebar:not(.hidden) {
+    transform: translateX(0);
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    padding: 15px 20px;
+    border-bottom: 1px solid #444;
+}
+
+.sidebar ul li a {
+    text-decoration: none;
+    color: white;
+}
+
+.sidebar ul li a:hover {
+    background-color: #444;
+}
+

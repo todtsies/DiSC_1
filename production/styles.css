@@ -10,13 +10,23 @@ body {
   header {
     /* justify-content: space-between;
     align-items: center; */
-    background-color: red;
+    background-color: rgb(212, 25, 25);
     color: white;
-    padding: 10px 20px;
+    padding: 20px;
     height: 60px;
     z-index: 1001;
+    flex: grid;
   }
   
+  .header-title {
+    font-size: 24px;
+    margin: 0;
+    text-align: center;
+    flex-grow: grid;
+    width: 50%;
+    padding-left: 375px;
+  }
+
   #hamburger-menu {
     background: none;
     border: none;
@@ -25,14 +35,6 @@ body {
     color: white;
     position: relative;
     z-index: 1002;
-  }
-
-  .header-title {
-    font-size: 24px;
-    margin: 0;
-    text-align: center;
-    flex-grow: 1;
-    width: 50%
   }
   
   /* Sidebar Styles */
@@ -125,6 +127,7 @@ body.dark-mode {
 
   #switch-environment {
     padding: 10px 20px;
+    float: right;
     justify-content: space-between;
     align-items: right;
     background-color: white;
