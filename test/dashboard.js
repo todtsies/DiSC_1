@@ -106,3 +106,15 @@ const advancedSearchBtn = document.getElementById("advancedsearch");
         advancedSearchBtn.addEventListener("click", () => {
             window.location.href = "search.html";
         });
+
+
+
+        const createPartyBtn = document.getElementById("createPartyBtn");
+        createPartyBtn.addEventListener("click", () => {
+            window.location.href = "./create-party/create-party.html";
+        });
+
+        const searchPartyBtn = document.getElementById("searchPartyBtn");
+        searchPartyBtn.addEventListener("click", () => {
+            window.location.href = "./search-party/parties.html";
+        });
