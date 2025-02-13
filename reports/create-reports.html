@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Scheduled Report</title>
+    <link rel="stylesheet" href="styles.css">
+
+
+</head>
+
+<body>
+
+    <header>
+        <div class="blue-header">
+            <img src="../login/img/ferguson-logo-white.png" alt="Application Logo" class="app-logo">
+            <div class="buttons">
+                <button id="logout-btn">Logout</button>
+            </div>
+        </div>
+
+
+        <nav>
+            <ul class="nav-menu">
+
+                <div class="environment-switch">
+                    <li><a href="../environment/environment.html" class="environment-btn">DiSC Test</a></li>
+                </div>
+                <li><a href="../test/test.html">Home</a></li>
+                <li><a href="#">Visibilty</a></li>
+                <li><a href="../test/search.html">Advanced Search</a></li>
+                <li><a href="#">Configurations</a></li>
+                <li><a href="reports.html">Reports</a></li>
+                <li><a href="#">Preferences</a></li>
+            </ul>
+        </nav>
+
+    </header>
+    <button class="submit-btn" style="float: right; background-color: rgb(62, 61, 61); margin-left: 5px;">Save and Subscribe</button>
+
+    <button class="submit-btn" style="float: right;">Save Report</button>
+    <button class="submit-btn" style="float: right; background-color: rgb(155, 154, 154); margin-right: 5px;">Cancel</button>
+
+    <div class="report-container" style="margin-top: 60px;">
+        <!-- Left Sidebar Card -->
+        <div class="sidebar-card">
+            <h4>Report Preferences</h4>
+            <hr>
+            <h5>Report Preferences</h5>
+            <form>
+                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1"
+                    checked>
+                <label class="form-check-label" for="exampleRadios1">
+                    Send only when results found
+                </label>
+                <br>
+                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1"
+                    checked>
+                <label class="form-check-label" for="exampleRadios1">
+                    Send even if no results found
+                </label>
+
+
+
+                <h5>File Format</h5>
+                <input class="form-check-input" type="radio" name="exampleRadios1" id="exampleRadios1" value="option1"
+                    checked>
+                <label class="form-check-label" for="exampleRadios1">
+                    Formatted for Excel .csv
+                </label>
+                <br>
+                <input class="form-check-input" type="radio" name="exampleRadios1" id="exampleRadios1" value="option1"
+                    checked>
+                <label class="form-check-label" for="exampleRadios1">
+                    Unformatted .csv
+                </label>
+            </form>
+
+            <hr>
+
+            <label><input type="checkbox" name="format">Send to FTP</label>
+        </div>
+
+        <!-- Right Cards (75%) -->
+        <div class="main-content">
+            <div class="report-card">
+                <h4>Scheduled Report Name</h4>
+                <hr>
+                <h5>Scheduled Report Name</h5>
+                <input type="text" placeholder="Enter report name">
+            </div>
+            <div class="report-card">
+                <h4>Schedule</h4>
+                <hr>
+                <h5>Occurence</h5>
+                <select>
+                    <option value="" disabled selected>Select an option</option>
+                    <option>By the Half Hour</option>
+                    <option>Hourly</option>
+                    <option>Daily</option>
+                    <option>Weekly</option>
+                    <option>Monthly</option>
+                </select>
+            </div>
+            <div class="report-card">
+                <h4>Date Range</h4>
+
+                <hr>
+                <form>
+                    <label for="start-date">Start Date:</label>
+                    <input type="date" id="start-date" name="start-date">
+
+
+
+                </form>
+            </div>
+            <div class="report-card">
+                <h4>Search Criteria</h4>
+                <hr>
+                <select>
+                    <option value="" disabled selected>Select an option</option>
+                    <option>Invoice Date</option>
+                    <option>Purchase Order Acknowledgment Date</option>
+                    <option>Shiped Date</option>
+                    <option>Order Date</option>
+                    <option>etc</option>
+                </select>
+            </div>
+            <div class="report-card">
+                <h4>Column Chooser</h4>
+                <hr>
+                <form style="display: flex;">
+                    <label><input type="checkbox" name="format">Document ID</label>
+                    <br>
+                    <label><input type="checkbox" name="format">Document Type</label>
+                    <label><input type="checkbox" name="format">Sender</label>
+                    <label><input type="checkbox" name="format">Receiver</label>
+
+                </form>
+            </div>
+        </div>
+
+    </div>
+    <script>
+
+        document.getElementById("logout-btn").addEventListener("click", () => {
+            localStorage.clear(); // Clear all stored data
+            window.location.href = "../index.html";
+        });
+    </script>
+</body>
+
+</html>

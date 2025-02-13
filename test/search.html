@@ -3,16 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
     <title>Multi-Select Dropdown</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-        }
-
+        
         .select-container {
             display: flex;
-            gap: 20px;
         }
 
         select {
@@ -182,6 +178,32 @@
     </style>
 </head>
 <body>
+
+    <header>
+        <div class="blue-header">
+          <img src="../login/img/ferguson-logo-white.png" alt="Application Logo" class="app-logo">
+          <div class="buttons">
+            <div id="switch-environment-container" style="display: none;">
+              <button id="switch-environment" type="button">Switch Environment</button>
+            </div>
+            <button id="logout-btn">Logout</button>
+          </div>
+        </div>
+    
+    
+        <nav>
+          <ul class="nav-menu">
+            <li><a href="../environment/environment.html" class="environment-btn">DiSC Test</a></li>
+            <li><a href="test.html" >Home</a></li>
+            <li><a href="#">Visibilty</a></li>
+            <li><a href="search.html">Advanced Search</a></li>
+            <li><a href="#">Configurations</a></li>
+            <li><a href="../reports/reports.html">Reports</a></li>
+            <li><a href="#">Preferences</a></li>
+          </ul>
+        </nav>
+    
+      </header>
     <h1>Search</h1>
 
     <div class="select-container">

@@ -118,3 +118,5 @@ const advancedSearchBtn = document.getElementById("advancedsearch");
         searchPartyBtn.addEventListener("click", () => {
             window.location.href = "./search-party/parties.html";
         });
+
+        
