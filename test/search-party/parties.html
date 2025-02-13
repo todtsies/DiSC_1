@@ -7,15 +7,38 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+
+    <header>
+        <div class="blue-header">
+          <img src="../../login/img/ferguson-logo-white.png" alt="Application Logo" class="app-logo">
+          <div class="buttons">
+            <button id="logout-btn">Logout</button>
+          </div>
+        </div>
+    
+    
+        <nav>
+          <ul class="nav-menu">
+    
+            <div class="environment-switch">
+              <li><a href="../environment/environment.html" class="environment-btn">DiSC Test</a></li>
+            </div>
+            <li><a href="../test.html">Home</a></li>
+            <li><a href="#">Visibilty</a></li>
+            <li><a href="../search.html">Advanced Search</a></li>
+            <li><a href="parties.html">Configurations</a></li>
+            <li><a href="../../reports/reports.html">Reports</a></li>
+            <li><a href="#">Preferences</a></li>
+          </ul>
+        </nav>
+    
+      </header>
     <div class="list-container">
         <h2>All Created Parties</h2>
-
-        <a href="../test.html" style="float: right;">Back to Dashboard</a>
-
-    
+        <a href="../create-party/create-party.html" class="create-party">Create New Party</a>
         <!-- Search Input -->
         <input type="text" id="searchInput" placeholder="Search parties..." onkeyup="filterParties()">
-        <a href="../create-party/create-party.html">Create New Party</a>
+
 
         <table>
             <thead>
