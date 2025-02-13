@@ -37,12 +37,16 @@
 
     </header>
     <div class="reports-container">
+
+        <button id="create-report-btn" style="float: right; margin-left: 15px;">+ Create Scheduled Report</button>
         <div class="reports-header">
-            <h2>Available Reports</h2>
-            <button id="create-report-btn">+ Create Scheduled Report</button>
+            <input type="text" id="filter-input" placeholder="Filter results..." onkeyup="filterReports()">
+            
         </div>
 
-        <input type="text" id="filter-input" placeholder="Filter results..." onkeyup="filterReports()">
+        
+
+        <h2>Available Reports</h2>
 
         <div class="reports-table">
             <table>
