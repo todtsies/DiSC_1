@@ -28,7 +28,6 @@
           <li><a href="../environment/environment.html" class="environment-btn">DiSC Test</a></li>
         </div>
         <li><a href="test.html">Home</a></li>
-        <li><a href="#">Visibilty</a></li>
         <li><a href="search.html">Advanced Search</a></li>
         <li><a href="search-party/parties.html">Configurations</a></li>
         <li><a href="../reports/reports.html">Reports</a></li>
@@ -38,13 +37,13 @@
 
   </header>
 
-  <div class="container-fluid" style="padding: 40px;">
+  <div class="container-fluid" style="margin-top: 40px;">
 
 
     <div class="row">
       <div class="col-7">
         <div class="card">
-          <h5 class="card-title" style="text-align: center; margin-top: 15px;">Daily Transactions</h5>
+          <h5 class="card-header" style="text-align: center;">Daily Transactions</h5>
           <canvas id="barChart"></canvas>
           <div class="card-body">
             <p class="card-text"></p>
@@ -55,22 +54,62 @@
         <div class="card">
           <h5 class="card-header" style="text-align: center;">Quick Links</h5>
           <div class="card-body">
-            <label for="PO-Number">PO Number:</label>
-            <input type="PO-Number" id="ponumber" name="po-number" >
-            <a href="#" class="btn btn-primary" style="float: right;">Quick Search</a>
+           
+            <div class="form-container">
+
+              <!-- Party Search Form -->
+              <div class="search-form">
+                  <h2>Search for a Party</h2>
+
+                  <hr>
+      
+      
+                  <label>
+                    <input type="radio" name="orderType" value="po" > Party ID
+                </label>
+                <label>
+                    <input type="radio" name="orderType" value="trilogie" > Party Name
+                </label>
+    
+                <div id="inputContainer">
+  
+                    <input type="text" id="orderNumber" placeholder="Enter selected party info">
+                </div>
+                
+      
+                  <button id="searchPartyButton" style="background-color: rgb(27, 52, 125);" onclick="searchParties()">Search</button>
+              </div>
+      
+              <!-- Order Search Form -->
+              <div class="search-form">
+                  <h2>Search by Order Number</h2>
+
+                  <hr>
+      
+                  <label>
+                      <input type="radio" name="orderType" value="po" > PO Number
+                  </label>
+                  <label>
+                      <input type="radio" name="orderType" value="trilogie" > Trilogie Order Number
+                  </label>
+      
+                  <div id="inputContainer">
+                  
+                      <input type="text" id="orderNumber" placeholder="Enter selected order number">
+                  </div>
+                  
+      
+                  <button id="searchOrderButton" style="background-color: rgb(27, 52, 125);" onclick="searchOrder()">Search</button>
+              </div>
+      
+          </div>
+      
+      
+            
 
           </div>
         </div>
 
-        <div class="card" style="margin-top: 10px;">
-          <h5 class="card-header" style="text-align: center;">Configurations</h5>
-          <div class="card-body">
-            <h5 class="card-title">Need to Finish</h5>
-          
-            <a href="../test/create-party/create-party.html" class="btn btn-primary" id="createPartyBtn">Create Party</a>
-
-          </div>
-        </div>
 
       </div>
     </div>

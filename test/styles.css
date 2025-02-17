@@ -8,6 +8,7 @@ body, ul {
 body {
     background-color: #f6f5f5;
     font-family: 'Source Sans Pro', sans-serif;
+    border-radius: 8px;
 }
 
 /* Style the navigation bar */
@@ -139,6 +140,154 @@ a {
 }
 
 
+.form-container {
+    display: flex;
+    gap: 20px; /* Space between forms */
+}
+
+.search-form {
+    width: 300px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background: #fff;
+}
+
+.search-form h2 {
+    margin-bottom: 15px;
+    font-size: 18px;
+}
+
+label {
+    display: block;
+    margin: 10px 0;
+}
+
+input[type="radio"] {
+    margin-right: 8px;
+}
+
+#inputContainer {
+    margin-top: 10px;
+}
+
+input[type="text"], select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    background: #007bff;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 14px;
+    margin-top: 15px;
+}
+
+button:hover {
+    background: #0056b3;
+}
+
+.dropdown {
+    display: none; /* Ensures it's hidden initially */
+    position: absolute;
+    width: 100%;
+    border: 1px solid #ccc;
+    background: white;
+    max-height: 200px;
+    overflow-y: auto;
+    z-index: 1000;
+    padding: 5px;
+}
+
+.dropdown.show {
+    display: block; /* Only shows when toggled */
+}
+
+.multi-select {
+    position: relative;
+    
+}
+
+.selected-options {
+    display: flex;
+    flex-wrap: wrap;
+    min-height: 40px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    background: white;
+}
+
+.selected-options input {
+    border: none;
+    outline: none;
+    width: 100%;
+    cursor: pointer;
+    background: transparent;
+}
+
+.dropdown {
+    display: none;
+    position: absolute;
+    width: 100%;
+    border: 1px solid #ccc;
+    background: white;
+    max-height: 200px;
+    overflow-y: auto;
+    z-index: 1000;
+    padding: 5px;
+}
+
+.dropdown.show {
+    display: block;
+}
+
+.dropdown input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    outline: none;
+    margin-bottom: 5px;
+}
+
+.dropdown ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.dropdown ul li {
+    padding: 8px 10px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.dropdown ul li:hover {
+    background: #f0f0f0;
+}
+
+.selected-option {
+    background: #007bff;
+    color: white;
+    padding: 5px 8px;
+    margin: 3px;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+}
+
+.selected-option span {
+    margin-left: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
 
 
 
