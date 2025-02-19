@@ -41,10 +41,10 @@
         <button id="create-report-btn" style="float: right; margin-left: 15px;">+ Create Scheduled Report</button>
         <div class="reports-header">
             <input type="text" id="filter-input" placeholder="Filter results..." onkeyup="filterReports()">
-            
+
         </div>
 
-        
+
 
         <h2>Available Reports</h2>
 
@@ -57,6 +57,7 @@
                         <th>Delivery</th>
                         <th>Last Modified</th>
                         <th>Subscribers</th>
+                        <th></th>
                     </tr>
                 </thead>
                 <tbody id="reports-list">
@@ -66,6 +67,16 @@
                         <td>Email</td>
                         <td>Feb 10, 2025</td>
                         <td>Julie Hedly</td>
+                        <td>
+                            <div class="dropdown">
+                                <button class="ellipsis-btn">•••</button>
+                                <div class="dropdown-content">
+                                    <a href="#">Edit</a>
+                                    <a href="#">Delete</a>
+                                    <a href="#">Subscribe</a>
+                                </div>
+                            </div>
+                        </td>
                     </tr>
                     <tr>
                         <td>Daily Outbound Report</td>
@@ -73,6 +84,16 @@
                         <td></td>
                         <td>Feb 12, 2025</td>
                         <td></td>
+                        <td>
+                            <div class="dropdown">
+                                <button class="ellipsis-btn">•••</button>
+                                <div class="dropdown-content">
+                                    <a href="#">Edit</a>
+                                    <a href="#">Delete</a>
+                                    <a href="#">Subscribe</a>
+                                </div>
+                            </div>
+                        </td>
                     </tr>
                     <tr>
                         <td>Daily Invoice Detail</td>
@@ -80,6 +101,16 @@
                         <td>FTP</td>
                         <td>Feb 9, 2025</td>
                         <td>Daniel Boggs</td>
+                        <td>
+                            <div class="dropdown">
+                                <button class="ellipsis-btn">•••</button>
+                                <div class="dropdown-content">
+                                    <a href="#">Edit</a>
+                                    <a href="#">Delete</a>
+                                    <a href="#">Subscribe</a>
+                                </div>
+                            </div>
+                        </td>
                     </tr>
                     <tr>
                         <td>Orders without Order Acknowledgment</td>
@@ -87,6 +118,16 @@
                         <td>Email</td>
                         <td>Feb 8, 2025</td>
                         <td>Emily Todt</td>
+                        <td>
+                            <div class="dropdown">
+                                <button class="ellipsis-btn">•••</button>
+                                <div class="dropdown-content">
+                                    <a href="#">Edit</a>
+                                    <a href="#">Delete</a>
+                                    <a href="#">Subscribe</a>
+                                </div>
+                            </div>
+                        </td>
                     </tr>
                 </tbody>
             </table>

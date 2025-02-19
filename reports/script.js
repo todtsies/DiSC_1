@@ -32,3 +32,31 @@ document.getElementById("logout-btn").addEventListener("click", () => {
     localStorage.clear(); // Clear all stored data
     window.location.href = "../index.html";
   });
+
+  document.addEventListener("DOMContentLoaded", function() {
+    document.querySelectorAll(".ellipsis-btn").forEach(button => {
+        button.addEventListener("click", function(event) {
+            // Close all dropdowns first
+            document.querySelectorAll(".dropdown-content").forEach(dropdown => {
+                if (dropdown !== this.nextElementSibling) {
+                    dropdown.classList.remove("show");
+                }
+            });
+
+            // Toggle only the clicked button's dropdown
+            const dropdown = this.nextElementSibling;
+            dropdown.classList.toggle("show");
+
+            event.stopPropagation(); // Prevent immediate closing
+        });
+    });
+
+    // Close dropdown if clicking outside
+    document.addEventListener("click", function(event) {
+        document.querySelectorAll(".dropdown-content").forEach(dropdown => {
+            if (!dropdown.contains(event.target)) {
+                dropdown.classList.remove("show");
+            }
+        });
+    });
+});
