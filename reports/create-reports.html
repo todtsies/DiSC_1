@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -6,24 +6,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Create Scheduled Report</title>
     <link rel="stylesheet" href="styles.css">
-
-
 </head>
 
 <body>
 
     <header>
         <div class="blue-header">
+            <a href="https://miro.medium.com/v2/resize:fit:1400/1*-LZZp1GHJ0ljXnh4yC27Ow.png" target="_blank">
             <img src="../login/img/ferguson-logo-white.png" alt="Application Logo" class="app-logo">
+            </a>
             <div class="buttons">
                 <button id="logout-btn">Logout</button>
             </div>
         </div>
-
-
         <nav>
             <ul class="nav-menu">
-
                 <div class="environment-switch">
                     <li><a href="../environment/environment.html" class="environment-btn">DiSC Test</a></li>
                 </div>
@@ -35,98 +32,136 @@
                 <li><a href="#">Preferences</a></li>
             </ul>
         </nav>
-
     </header>
-    <button class="submit-btn" style="float: right; background-color: rgb(62, 61, 61); margin-left: 5px;">Save and Subscribe</button>
 
+    <button class="submit-btn" style="float: right; background-color: rgb(62, 61, 61); margin-left: 5px;">Save and Subscribe</button>
     <button class="submit-btn" style="float: right;">Save Report</button>
     <button class="submit-btn" style="float: right; background-color: rgb(155, 154, 154); margin-right: 5px;">Cancel</button>
 
     <div class="report-container" style="margin-top: 60px;">
-        <!-- Left Sidebar Card -->
         <div class="sidebar-card">
             <h4>Report Preferences</h4>
             <hr>
             <h5>Report Preferences</h5>
             <form>
-                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1"
-                    checked>
-                <label class="form-check-label" for="exampleRadios1">
-                    Send only when results found
-                </label>
+                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
+                <label class="form-check-label" for="exampleRadios1">Send only when results found</label>
                 <br>
-                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1"
-                    checked>
-                <label class="form-check-label" for="exampleRadios1">
-                    Send even if no results found
-                </label>
-
-
+                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
+                <label class="form-check-label" for="exampleRadios1">Send even if no results found</label>
 
                 <h5>File Format</h5>
-                <input class="form-check-input" type="radio" name="exampleRadios1" id="exampleRadios1" value="option1"
-                    checked>
-                <label class="form-check-label" for="exampleRadios1">
-                    Formatted for Excel .csv
-                </label>
+                <input class="form-check-input" type="radio" name="exampleRadios1" id="exampleRadios1" value="option1" checked>
+                <label class="form-check-label" for="exampleRadios1">Formatted for Excel .csv</label>
                 <br>
-                <input class="form-check-input" type="radio" name="exampleRadios1" id="exampleRadios1" value="option1"
-                    checked>
-                <label class="form-check-label" for="exampleRadios1">
-                    Unformatted .csv
-                </label>
+                <input class="form-check-input" type="radio" name="exampleRadios1" id="exampleRadios1" value="option1" checked>
+                <label class="form-check-label" for="exampleRadios1">Unformatted .csv</label>
             </form>
-
             <hr>
-
-            <label><input type="checkbox" name="format">Send to FTP</label>
         </div>
 
-        <!-- Right Cards (75%) -->
         <div class="main-content">
-            <div class="report-card">
-                <h4>Scheduled Report Name</h4>
+            <div class="report-card-name">
+                <h4>Scheduled Reports</h4>
                 <hr>
                 <h5>Scheduled Report Name</h5>
-                <input type="text" placeholder="Enter report name">
+                <input type="text" id="report-name" placeholder="Enter report name">
+                <button class="add-name-btn" onclick="addName()" style="background-color: #007bff; color: white;">Add</button>
             </div>
-            <div class="report-card">
+
+            <div class="report-card-occur">
                 <h4>Schedule</h4>
                 <hr>
-                <h5>Occurence</h5>
-                <select>
+                <h5>Occurrence</h5>
+                <select id="occurrence" onchange="toggleScheduleOptions()">
                     <option value="" disabled selected>Select an option</option>
-                    <option>Hourly</option>
-                    <option>Daily</option>
-                    <option>Weekly</option>
-                    <option>Monthly</option>
+                    <option value="Daily">Daily</option>
+                    <option value="Weekly">Weekly</option>
+                    <option value="Monthly">Monthly</option>
+                </select>
+
+                <select id="time-dropdown" style="display: none; margin-left: 10px;">
+                    <option value="" disabled selected>Select a time</option>
+                    <option value="12AM">12 AM</option>
+                    <option value="1AM">1 AM</option>
+                    <option value="2AM">2 AM</option>
+                </select>
+
+                <select id="day-dropdown" style="display: none; margin-left: 10px;" onchange="showDayTimeDropdown()">
+                    <option value="" disabled selected>Select a day</option>
+                    <option value="Monday">Monday</option>
+                    <option value="Tuesday">Tuesday</option>
+                </select>
+
+                <select id="day-time-dropdown" style="display: none; margin-left: 10px;">
+                    <option value="" disabled selected>Select a time</option>
+                    <option value="12AM">12 AM</option>
+                    <option value="1AM">1 AM</option>
+                    <option value="2AM">2 AM</option>
+                </select>
+
+                <select id="day-month-dropdown" style="display: none; margin-left: 10px;" onchange="showMonthTimeDropdown()">
+                    <option value="" disabled selected>Select a day</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                </select>
+
+                <select id="month-time-dropdown" style="display: none; margin-left: 10px;">
+                    <option value="" disabled selected>Select a time</option>
+                    <option value="12AM">12 AM</option>
+                    <option value="1AM">1 AM</option>
+                    <option value="2AM">2 AM</option>
                 </select>
             </div>
-            <div class="report-card">
-                <h4>Date Range</h4>
 
+            <div class="report-card-search">
+                <h4>Search Criteria</h4>
+                <hr>
+                <select id="search-criteria" onchange="toggleFreeformInput()">
+                    <option value="" disabled selected>Select an option</option>
+                    <option value="Party ID">Party ID</option>
+                    <option value="Trading Partner Third Party">Trading Partner 3rd Party</option>
+                    <option value="Connection Type">Connection Type</option>
+                </select>
+
+                <!-- This will be shown when Party ID is selected -->
+                <div id="party-id-input" style="display: none; margin-top: 10px;">
+                    <label for="party-id">Enter multiple Party ID's separated by a comma:</label>
+                    <br>
+                    <input type="text" id="party-id" placeholder="01234, 56789, etc., " oninput="toggleAddButton()">
+                    <!-- Upload button next to the Party ID input field -->
+                    <button id="upload-btn" style="margin-left: 10px;" title="Upload an .xls of Party IDs where all ID's are listed in column A" onclick="document.getElementById('file-input').click(); return false;">Upload</button>
+                    <!-- Hidden file input for triggering File Explorer -->
+                    <input type="file" id="file-input" style="display: none;" accept=".xls, .xlsx">
+                    <!-- Add button that will be shown when input is not empty -->
+                    <button id="add-btn" style="display: none; margin-left: 10px; background-color: #007bff; color: white;">Add</button>
+                </div>
+
+                <!-- New dropdown for Trading Partner Third Party -->
+                <div id="third-party-dropdown" style="display: none; margin-top: 10px;">
+                    <label for="third-party">Select Trading Partner:</label>
+                    <br>
+                    <select id="third-party">
+                        <option value="" disabled selected>Select an option</option>
+                        <option value="CINX">CINX</option>
+                        <option value="Conexiom">Conexiom</option>
+                        <option value="OpenText">OpenText</option>
+                        <option value="Supplier Solutions">Supplier Solutions</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="report-card-date">
+                <h4>Date Range</h4>
                 <hr>
                 <form>
                     <label for="start-date">Start Date:</label>
                     <input type="date" id="start-date" name="start-date">
-
-
-
                 </form>
             </div>
-            <div class="report-card">
-                <h4>Search Criteria</h4>
-                <hr>
-                <select>
-                    <option value="" disabled selected>Select an option</option>
-                    <option>Party ID/Upload option for multiple IDs</option>
-                    <option>Purchase Order Acknowledgment Date</option>
-                    <option>Shiped Date</option>
-                    <option>Order Date</option>
-                    <option>etc</option>
-                </select>
-            </div>
-            <div class="report-card">
+
+            <div class="report-card-column">
                 <h4>Column Chooser</h4>
                 <hr>
                 <form style="display: flex;">
@@ -135,19 +170,96 @@
                     <label><input type="checkbox" name="format">Document Type</label>
                     <label><input type="checkbox" name="format">Sender</label>
                     <label><input type="checkbox" name="format">Receiver</label>
-
                 </form>
             </div>
         </div>
-
     </div>
-    <script>
 
+    <script>
         document.getElementById("logout-btn").addEventListener("click", () => {
-            localStorage.clear(); // Clear all stored data
+            localStorage.clear();
             window.location.href = "../index.html";
         });
+
+        function toggleScheduleOptions() {
+            let occurrence = document.getElementById("occurrence").value;
+            let timeDropdown = document.getElementById("time-dropdown");
+            let dayDropdown = document.getElementById("day-dropdown");
+            let dayTimeDropdown = document.getElementById("day-time-dropdown");
+            let dayMonthDropdown = document.getElementById("day-month-dropdown");
+            let monthTimeDropdown = document.getElementById("month-time-dropdown");
+
+            // Hide all dropdowns initially
+            timeDropdown.style.display = "none";
+            dayDropdown.style.display = "none";
+            dayTimeDropdown.style.display = "none";
+            dayMonthDropdown.style.display = "none";
+            monthTimeDropdown.style.display = "none";
+
+            // Show or hide time and day/month dropdowns based on the occurrence selected
+            if (occurrence === "Daily") {
+                timeDropdown.style.display = "inline-block";
+            } else if (occurrence === "Weekly") {
+                dayDropdown.style.display = "inline-block"; // Show the day dropdown
+            } else if (occurrence === "Monthly") {
+                dayMonthDropdown.style.display = "inline-block"; // Show the day-month dropdown
+            }
+        }
+
+        function showDayTimeDropdown() {
+            let dayDropdown = document.getElementById("day-dropdown");
+            let dayTimeDropdown = document.getElementById("day-time-dropdown");
+
+            // Show the day-time dropdown when a day is selected
+            if (dayDropdown.value) {
+                dayTimeDropdown.style.display = "inline-block";
+            }
+        }
+
+        function showMonthTimeDropdown() {
+            let dayMonthDropdown = document.getElementById("day-month-dropdown");
+            let monthTimeDropdown = document.getElementById("month-time-dropdown");
+
+            // Show the month-time dropdown when a day-month is selected
+            if (dayMonthDropdown.value) {
+                monthTimeDropdown.style.display = "inline-block";
+            }
+        }
+
+        function toggleFreeformInput() {
+            let searchCriteria = document.getElementById("search-criteria").value;
+            let partyIdInput = document.getElementById("party-id-input");
+            let thirdPartyDropdown = document.getElementById("third-party-dropdown");
+
+            // Show the freeform input box when Party ID is selected
+            if (searchCriteria === "Party ID") {
+                partyIdInput.style.display = "block";
+                thirdPartyDropdown.style.display = "none"; // Hide third party dropdown
+            } else {
+                partyIdInput.style.display = "none";
+            }
+
+            // Show the third party dropdown when "Trading Partner Third Party" is selected
+            if (searchCriteria === "Trading Partner Third Party") {
+                thirdPartyDropdown.style.display = "block";
+                partyIdInput.style.display = "none"; // Hide Party ID input
+            } else {
+                thirdPartyDropdown.style.display = "none";
+            }
+        }
+
+        function toggleAddButton() {
+            const partyIdInput = document.getElementById('party-id');
+            const addBtn = document.getElementById('add-btn');
+            // Show the "Add" button if the input is not empty
+            if (partyIdInput.value.trim() !== "" && partyIdInput.placeholder !== partyIdInput.value) {
+                addBtn.style.display = 'inline-block';
+            } else {
+                addBtn.style.display = 'none';
+            }
+        }
     </script>
+
 </body>
 
 </html>

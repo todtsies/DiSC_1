@@ -235,7 +235,39 @@ nav {
 }
 
 /* Individual Report Cards */
-.report-card {
+.report-card-name {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+.report-card-occur {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+.report-card-date {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+.report-card-search {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+.report-card-column {
     background: white;
     padding: 20px;
     border-radius: 10px;
@@ -248,9 +280,45 @@ nav {
 }
 
 /* Input & Select Fields */
-.report-card input,
-.report-card select {
-    width: 100%;
+.report-card-name input,
+.report-card-name select {
+    width: 200px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.report-card-occur input,
+.report-card-occur select {
+    width: 175px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.report-card-date input,
+.report-card-date select {
+    width: 125px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.report-card-search input,
+.report-card-search select {
+    width: 225;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.report-card-column input,
+.report-card-column select {
+    width: 150px;
     padding: 10px;
     border: 1px solid #ddd;
     border-radius: 5px;
