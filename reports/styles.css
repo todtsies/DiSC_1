@@ -1,0 +1,331 @@
+/* General Styles */
+body {
+    font-family: 'Source Sans Pro', sans-serif;
+    background: #f5f5f5;
+    
+}
+
+h1 {
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+/* Reports Container */
+.reports-container {
+    max-width: 1500px;
+    margin: 20px auto;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Header Section */
+.reports-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.reports-header h2 {
+    margin: 0;
+}
+
+/* Create Report Button */
+#create-report-btn {
+    background-color: rgb(27, 52, 125);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+#create-report-btn:hover {
+    background-color: rgb(27, 52, 125);
+}
+
+/* Filter Input */
+#filter-input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+/* Reports Table */
+.reports-table {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+thead {
+    background-color: rgb(27, 52, 125);
+    color: white;
+}
+
+th, td {
+    padding: 12px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+/* Alternate row colors for better visibility */
+tbody tr:nth-child(odd) {
+    background-color: #f9f9f9;
+}
+
+/* Hover effect */
+tbody tr:hover {
+    background-color: #f1f1f1;
+    cursor: pointer;
+}
+
+nav {
+    background-color: rgb(246, 246, 242);
+    border-bottom: 1px solid grey;
+
+}
+
+
+
+/* Flexbox for horizontal layout */
+.nav-menu {
+    display: flex;
+    justify-content: left; 
+    gap: 20px; /* Adds spacing between items */
+    padding: 0;
+}
+
+/* Style the menu items */
+.nav-menu li {
+    display: inline;
+    
+}
+
+.environment-btn {
+    font-size: 50px;
+    margin: 30px;
+}
+
+/* Style the links */
+.nav-menu a {
+    text-decoration: none;
+    color: grey;
+    font-size: 14px;
+    padding: 10px 15px;
+    transition: background 0.3s ease;
+    font-weight: 200;
+}
+
+/* Hover effect */
+.nav-menu a.active,
+.nav-menu a:hover {
+    color: rgb(40, 73, 171);
+    border-bottom: 3px solid;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+
+.environment-switch {
+    border-right: 1px solid;
+}
+    .blue-header {
+        background-color: rgb(27, 52, 125);
+        color: #ffffff;
+        padding: 15px 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    .blue-header .title {
+        font-size: 30px;
+        font-weight: normal;
+        text-align: center;
+        padding-left: 150px;
+        flex: 1;
+        letter-spacing: 1px;
+    }
+    
+    .blue-header .buttons {
+        display: flex;
+        gap: 10px;
+    }
+    
+    .blue-header button {
+        background-color:white;
+        color: rgb(27, 52, 125);
+        border: none;
+        padding: 8px 15px;
+        font-size: 14px;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+    
+    .blue-header button:hover {
+        background-color: grey;
+    }
+    
+    .app-logo {
+        width: 150px;
+        height: 20px;
+    }
+
+    /* General Styles */
+
+/* Report Container Layout */
+.report-container {
+    display: flex;
+    max-width: 1000px;
+    margin: 20px auto;
+    gap: 20px;
+}
+
+/* Sidebar Card (Left - 25%) */
+.sidebar-card {
+    width: 30%;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+/* Submit Button */
+.submit-btn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background 0.3s ease;
+}
+
+.submit-btn:hover {
+    background-color: #0056b3;
+}
+
+/* Main Content (Right - 75%) */
+.main-content {
+    width: 75%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Individual Report Cards */
+.report-card {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+.report-card h3 {
+    margin-bottom: 10px;
+}
+
+/* Input & Select Fields */
+.report-card input,
+.report-card select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .report-container {
+        flex-direction: column;
+    }
+
+    .sidebar-card, .main-content {
+        width: 100%;
+    }
+}
+
+/* Checkbox Group Styling */
+.checkbox-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding-top: 10px;
+}
+
+/* Checkbox Label */
+.checkbox-group label {
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+/* Custom Checkbox Styling */
+.checkbox-group input[type="checkbox"] {
+    margin-right: 10px;
+    width: 18px;
+    height: 18px;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.ellipsis-btn {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 5px 10px;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 120px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 10px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+/* Show dropdown when active */
+.show {
+    display: block;
+}

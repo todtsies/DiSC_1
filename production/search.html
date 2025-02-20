@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multi-Select Dropdown</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        .select-container {
+            display: flex;
+            gap: 20px;
+        }
+
+        select {
+            margin: 10px 0;
+            width: 200px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .centered-label {
+            text-align: left;
+        }
+
+        .search-container {
+            display: flex;
+            align-items: center;
+        }
+
+        #partySearch, #docSearch {
+            padding: 5px;
+            width: 150px;
+            margin-left: 10px;
+            border: none;
+            box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            font-style: italic;
+            font-weight: bold;
+        }
+
+        #menu {
+            list-style-type: none;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            padding: 10px;
+            background-color: #f9f9f9;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            visibility: hidden;
+        }
+
+        #menu li {
+            background-color: #AFE1AF;
+            padding: 5px 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        #menu li:hover {
+            background-color: lightcoral;
+        }
+
+        .date-range-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .date-range-container input {
+            padding: 5px;
+            width: 150px;
+            border: none;
+            box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+            border-radius: 5px;
+        }
+
+        .add-button {
+            margin-top: 10px;
+            padding: 5px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+            width: 40px;
+        }
+
+        .add-button:hover {
+            background-color: #45a049;
+        }
+
+        .date-range-container span {
+            font-size: 12px;
+            font-style: italic;
+            color: gray;
+        }
+
+        .checkbox-container {
+            margin-top: 20px;
+            display: flex;
+            gap: 20px; /* Adjusted spacing between checkbox items */
+        }
+
+        .checkbox-item {
+            display: flex;
+            align-items: center;
+            gap: 5px; /* Reduced gap between checkbox and label */
+        }
+
+        .checkbox-container label {
+            font-size: 14px;
+            display: inline-block;
+        }
+
+        .checkbox-container input {
+            margin-top: 0px; /* Removed top margin to close the gap */
+        }
+
+        /* Styling for the Search button */
+        .search-button {
+            margin-top: 10px;
+            padding: 8px 15px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .search-button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Styling for the line with the arrow */
+        .expandable-section {
+            margin-top: 30px;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .expandable-line {
+            display: inline-block;
+            width: 100%;
+            border-top: 1px solid gray;
+            margin-bottom: 10px;
+            position: relative;
+        }
+
+        .expandable-line::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: -6px;
+            transform: translateX(-50%);
+            border-left: 5px solid transparent;
+            border-right: 5px solid transparent;
+            border-top: 8px solid gray;
+        }
+
+        .expandable-content {
+            display: none;
+            margin-top: 15px;
+        }
+
+        /* Styling for the 'Advanced' label */
+        .advanced-label {
+            font-weight: bold;
+            margin-bottom: 5px;
+            font-size: 16px;
+            color: #007BFF;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Search</h1>
+
+    <div class="select-container">
+        <div>
+            <div class="centered-label">
+                <div class="search-container">
+                    <input type="text" id="partySearch" placeholder="Party:" onkeyup="filterPartyOptions()">
+                </div>
+            </div>
+            <select id="partyOptions" multiple size="5">
+                <option value="Option 1">Ahern</option>
+                <option value="Option 2">Chicken Sandwich</option>
+                <option value="Option 3">Deez</option>
+                <option value="Option 4">Julie</option>
+                <option value="Option 5">Zootopia 2</option>
+            </select>
+        </div>
+
+        <div>
+            <div class="centered-label">
+                <div class="search-container">
+                    <input type="text" id="docSearch" placeholder="Document Type:" onkeyup="filterDocOptions()">
+                </div>
+            </div>
+            <select id="docOptions" multiple size="5">
+                <option value="Party 1">I810</option>
+                <option value="Party 2">I840</option>
+                <option value="Party 3">I850</option>
+                <option value="Party 4">I855</option>
+                <option value="Party 5">I856</option>
+                <option value="Party 6">I860</option>
+                <option value="Party 7">I865</option>
+                <option value="Party 7">O810</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="checkbox-container">
+        <div class="checkbox-item">
+            <input type="checkbox" id="today" onclick="toggleCheckbox('Today')">
+            <label for="today">Today</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox" id="thisWeek" onclick="toggleCheckbox('This Week')">
+            <label for="thisWeek">This Week</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox" id="thisMonth" onclick="toggleCheckbox('This Month')">
+            <label for="thisMonth">This Month</label>
+        </div>
+    </div>
+
+    <div class="date-range-container">
+        <input type="date" id="startDate">
+        <span>to</span>
+        <input type="date" id="endDate">
+    </div>
+
+    <button class="add-button" onclick="addDateRange()">Add</button>
+
+    <!-- Advanced Section Moved Below Add Button -->
+    <div class="expandable-section" onclick="toggleExpandableContent()">
+        <div class="advanced-label">Advanced</div>
+        <div class="expandable-line"></div>
+    </div>
+
+    <!-- Content to be expanded/collapsed -->
+    <div id="expandableContent" class="expandable-content">
+        <p>Here is some extra content that expands when you click the arrow.</p>
+    </div>
+
+    <br><br>
+
+    <h2>Search Query:</h2>
+    <ul id="menu"></ul>
+
+    <!-- Search Button -->
+    <button class="search-button" onclick="performSearch()">Search</button>
+
+    <script>
+        function handleSelection(selectId, menuId) {
+            const select = document.getElementById(selectId);
+            const menu = document.getElementById(menuId);
+
+            select.addEventListener('dblclick', function(event) {
+                if (event.target.tagName === 'OPTION') {
+                    if (![...menu.children].some(item => item.textContent === event.target.textContent)) {
+                        const listItem = document.createElement('li');
+                        listItem.textContent = event.target.textContent;
+                        listItem.addEventListener('click', function () {
+                            menu.removeChild(listItem);
+                            if (menu.children.length === 0) {
+                                menu.style.visibility = 'hidden';
+                            }
+                        });
+                        menu.appendChild(listItem);
+                        menu.style.visibility = 'visible';
+                    }
+                }
+            });
+        }
+
+        handleSelection('partyOptions', 'menu');
+        handleSelection('docOptions', 'menu');
+
+        function filterPartyOptions() {
+            const searchQuery = document.getElementById('partySearch').value.toLowerCase();
+            const partyOptions = document.getElementById('partyOptions').options;
+
+            for (let i = 0; i < partyOptions.length; i++) {
+                const option = partyOptions[i];
+                option.style.display = option.text.toLowerCase().includes(searchQuery) ? '' : 'none';
+            }
+        }
+
+        function filterDocOptions() {
+            const searchQuery = document.getElementById('docSearch').value.toLowerCase();
+            const docOptions = document.getElementById('docOptions').options;
+
+            for (let i = 0; i < docOptions.length; i++) {
+                const option = docOptions[i];
+                option.style.display = option.text.toLowerCase().includes(searchQuery) ? '' : 'none';
+            }
+        }
+
+        function addDateRange() {
+            const startDate = document.getElementById('startDate').value;
+            const endDate = document.getElementById('endDate').value;
+
+            if (startDate && endDate) {
+                const start = new Date(startDate);
+                const end = new Date(endDate);
+
+                if (end < start) {
+                    alert('Error: End date cannot be before the start date.');
+                    return;
+                }
+
+                const menu = document.getElementById('menu');
+                const listItem = document.createElement('li');
+                listItem.textContent = `From: ${startDate} To: ${endDate}`;
+                listItem.addEventListener('click', function () {
+                    menu.removeChild(listItem);
+                    if (menu.children.length === 0) {
+                        menu.style.visibility = 'hidden';
+                    }
+                });
+
+                menu.appendChild(listItem);
+                menu.style.visibility = 'visible';
+            } else {
+                alert('Please select both start and end dates.');
+            }
+        }
+
+        function toggleCheckbox(label) {
+            const menu = document.getElementById('menu');
+            const existingItems = [...menu.children].map(item => item.textContent);
+
+            if (document.getElementById(label.toLowerCase()).checked) {
+                // Add label to menu
+                if (!existingItems.includes(label)) {
+                    const listItem = document.createElement('li');
+                    listItem.textContent = label;
+                    listItem.addEventListener('click', function () {
+                        menu.removeChild(listItem);
+                        if (menu.children.length === 0) {
+                            menu.style.visibility = 'hidden';
+                        }
+                    });
+
+                    menu.appendChild(listItem);
+                    menu.style.visibility = 'visible';
+                }
+            } else {
+                // Remove label from menu
+                const itemToRemove = [...menu.children].find(item => item.textContent === label);
+                if (itemToRemove) {
+                    menu.removeChild(itemToRemove);
+                }
+            }
+        }
+
+        // Function to open image in popup
+        function performSearch() {
+            const imageUrl = "https://w0.peakpx.com/wallpaper/865/479/HD-wallpaper-thumbs-up-hands-of-business-people-success-concepts-business-concepts-thumbs-up-concepts.jpg";
+            const popupWindow = window.open("", "Popup", "width=600,height=400");
+            popupWindow.document.write(`<img src="${imageUrl}" style="width:100%; height:auto;" />`);
+        }
+
+        // Toggle expandable content visibility
+        function toggleExpandableContent() {
+            const content = document.getElementById('expandableContent');
+            content.style.display = content.style.display === 'none' || content.style.display === '' ? 'block' : 'none';
+        }
+    </script>
+</body>
+</html>

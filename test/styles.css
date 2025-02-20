@@ -1,0 +1,294 @@
+
+body, ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+body {
+    background-color: #f6f5f5;
+    font-family: 'Source Sans Pro', sans-serif;
+    border-radius: 8px;
+}
+
+/* Style the navigation bar */
+nav {
+    background-color: rgb(238, 238, 234);
+    padding: 10px 0;
+    border: 1px solid grey;
+
+}
+
+a {
+    line-height: 18px;
+    font-weight: 100;
+    font-size: 500px;
+}
+
+/* Flexbox for horizontal layout */
+.nav-menu {
+    display: flex;
+    justify-content: left; 
+    gap: 20px; /* Adds spacing between items */
+    padding: 0;
+}
+
+/* Style the menu items */
+.nav-menu li {
+    display: inline;
+    
+}
+
+.environment-btn {
+    font-size: 50px;
+    margin: 30px;
+}
+
+/* Style the links */
+.nav-menu a {
+    text-decoration: none;
+    color: grey;
+    font-size: 14px;
+    padding: 10px 15px;
+    transition: background 0.3s ease;
+    font-weight: 200;
+}
+
+/* Hover effect */
+.nav-menu a.active,
+.nav-menu a:hover {
+    color: rgb(40, 73, 171);
+    border-bottom: 3px solid;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+
+.environment-switch{
+    border-right: 1px solid;
+}
+.card-columns {
+    display: inline-block;
+    margin: 30px;
+
+    @media (min-width: 992px) and (max-width: 1199.98px) {
+        .card-columns {
+            column-count: 2;
+        }
+    }
+
+    @media (min-width: 1200px) {
+        .card-columns {
+            column-count: 1;
+        }
+    }
+}
+
+
+.blue-header {
+    background-color: rgb(27, 52, 125);
+    color: #ffffff;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.blue-header .title {
+    font-size: 30px;
+    font-weight: normal;
+    text-align: center;
+    padding-left: 150px;
+    flex: 1;
+    letter-spacing: 1px;
+}
+
+.blue-header .buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.blue-header button {
+    background-color:white;
+    color: rgb(27, 52, 125);
+    border: none;
+    padding: 8px 15px;
+    font-size: 14px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.blue-header button:hover {
+    background-color: grey;
+}
+
+.app-logo {
+    width: 150px;
+    height: 20px;
+}
+
+.card {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+
+.form-container {
+    display: flex;
+    gap: 20px; /* Space between forms */
+}
+
+.search-form {
+    width: 300px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background: #fff;
+}
+
+.search-form h2 {
+    margin-bottom: 15px;
+    font-size: 18px;
+}
+
+label {
+    display: block;
+    margin: 10px 0;
+}
+
+input[type="radio"] {
+    margin-right: 8px;
+}
+
+#inputContainer {
+    margin-top: 10px;
+}
+
+input[type="text"], select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    background: #007bff;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 14px;
+    margin-top: 15px;
+}
+
+button:hover {
+    background: #0056b3;
+}
+
+.dropdown {
+    display: none; /* Ensures it's hidden initially */
+    position: absolute;
+    width: 100%;
+    border: 1px solid #ccc;
+    background: white;
+    max-height: 200px;
+    overflow-y: auto;
+    z-index: 1000;
+    padding: 5px;
+}
+
+.dropdown.show {
+    display: block; /* Only shows when toggled */
+}
+
+.multi-select {
+    position: relative;
+    
+}
+
+.selected-options {
+    display: flex;
+    flex-wrap: wrap;
+    min-height: 40px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    background: white;
+}
+
+.selected-options input {
+    border: none;
+    outline: none;
+    width: 100%;
+    cursor: pointer;
+    background: transparent;
+}
+
+.dropdown {
+    display: none;
+    position: absolute;
+    width: 100%;
+    border: 1px solid #ccc;
+    background: white;
+    max-height: 200px;
+    overflow-y: auto;
+    z-index: 1000;
+    padding: 5px;
+}
+
+.dropdown.show {
+    display: block;
+}
+
+.dropdown input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    outline: none;
+    margin-bottom: 5px;
+}
+
+.dropdown ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.dropdown ul li {
+    padding: 8px 10px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.dropdown ul li:hover {
+    background: #f0f0f0;
+}
+
+.selected-option {
+    background: #007bff;
+    color: white;
+    padding: 5px 8px;
+    margin: 3px;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+}
+
+.selected-option span {
+    margin-left: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+
+
+

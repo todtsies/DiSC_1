@@ -1,0 +1,155 @@
+body {
+    font-family: 'Source Sans Pro', sans-serif;
+    background: #f5f5f5;
+    
+}
+
+
+.list-container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background: #28a745;
+    color: white;
+}
+
+.create-party {
+    display: flex;
+    margin: 10px;
+    text-decoration: none;
+    background: #007bff;
+    color: white;
+    padding: 10px;
+    border-radius: 4px;
+    float: right;
+}
+
+/* a:hover {
+    background: #0056b3;
+} */
+
+#searchInput {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+nav {
+    background-color: rgb(246, 246, 242);
+    border-bottom: 1px solid grey;
+
+}
+
+
+/* Flexbox for horizontal layout */
+.nav-menu {
+    display: flex;
+    justify-content: left; 
+    gap: 20px; /* Adds spacing between items */
+    padding: 0;
+}
+
+/* Style the menu items */
+.nav-menu li {
+    display: inline;
+    
+}
+
+.environment-btn {
+    font-size: 50px;
+    margin: 30px;
+}
+
+/* Style the links */
+.nav-menu a {
+    text-decoration: none;
+    color: grey;
+    font-size: 14px;
+    padding: 10px 15px;
+    transition: background 0.3s ease;
+    font-weight: 200;
+}
+
+/* Hover effect */
+.nav-menu a.active,
+.nav-menu a:hover {
+    color: rgb(40, 73, 171);
+    border-bottom: 3px solid;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+
+.environment-switch {
+    border-right: 1px solid;
+}
+    .blue-header {
+        background-color: rgb(27, 52, 125);
+        color: #ffffff;
+        padding: 15px 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    .blue-header .title {
+        font-size: 30px;
+        font-weight: normal;
+        text-align: center;
+        padding-left: 150px;
+        flex: 1;
+        letter-spacing: 1px;
+    }
+    
+    .blue-header .buttons {
+        display: flex;
+        gap: 10px;
+    }
+    
+    .blue-header button {
+        background-color:white;
+        color: rgb(27, 52, 125);
+        border: none;
+        padding: 8px 15px;
+        font-size: 14px;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+    
+    .blue-header button:hover {
+        background-color: grey;
+    }
+    
+    .app-logo {
+        width: 150px;
+        height: 20px;
+    }

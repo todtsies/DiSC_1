@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reports Page</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+</head>
+
+<body>
+
+    <header>
+        <div class="blue-header">
+            <img src="../login/img/ferguson-logo-white.png" alt="Application Logo" class="app-logo">
+            <div class="buttons">
+                <button id="logout-btn">Logout</button>
+            </div>
+        </div>
+
+
+        <nav>
+            <ul class="nav-menu">
+
+                <div class="environment-switch">
+                    <li><a href="../environment/environment.html" class="environment-btn">DiSC Test</a></li>
+                </div>
+                <li><a href="../test/test.html">Home</a></li>
+                <li><a href="#">Visibilty</a></li>
+                <li><a href="../test/search.html">Advanced Search</a></li>
+                <li><a href="../test/search-party/parties.html">Configurations</a></li>
+                <li><a href="reports.html">Reports</a></li>
+                <li><a href="#">Preferences</a></li>
+            </ul>
+        </nav>
+
+    </header>
+    <div class="reports-container">
+
+        <button id="create-report-btn" style="float: right; margin-left: 15px;">+ Create Scheduled Report</button>
+        <div class="reports-header">
+            <input type="text" id="filter-input" placeholder="Filter results..." onkeyup="filterReports()">
+
+        </div>
+
+
+
+        <h2>Available Reports</h2>
+
+        <div class="reports-table">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Report Name</th>
+                        <th>Type</th>
+                        <th>Delivery</th>
+                        <th>Last Modified</th>
+                        <th>Subscribers</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody id="reports-list">
+                    <tr>
+                        <td>Yesterday's ASNs</td>
+                        <td>Document</td>
+                        <td>Email</td>
+                        <td>Feb 10, 2025</td>
+                        <td>Julie Hedly</td>
+                        <td>
+                            <div class="dropdown">
+                                <button class="ellipsis-btn">•••</button>
+                                <div class="dropdown-content">
+                                    <a href="#">Edit</a>
+                                    <a href="#">Delete</a>
+                                    <a href="#">Subscribe</a>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Daily Outbound Report</td>
+                        <td>Document</td>
+                        <td></td>
+                        <td>Feb 12, 2025</td>
+                        <td></td>
+                        <td>
+                            <div class="dropdown">
+                                <button class="ellipsis-btn">•••</button>
+                                <div class="dropdown-content">
+                                    <a href="#">Edit</a>
+                                    <a href="#">Delete</a>
+                                    <a href="#">Subscribe</a>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Daily Invoice Detail</td>
+                        <td>Line Item</td>
+                        <td>FTP</td>
+                        <td>Feb 9, 2025</td>
+                        <td>Daniel Boggs</td>
+                        <td>
+                            <div class="dropdown">
+                                <button class="ellipsis-btn">•••</button>
+                                <div class="dropdown-content">
+                                    <a href="#">Edit</a>
+                                    <a href="#">Delete</a>
+                                    <a href="#">Subscribe</a>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Orders without Order Acknowledgment</td>
+                        <td>Document</td>
+                        <td>Email</td>
+                        <td>Feb 8, 2025</td>
+                        <td>Emily Todt</td>
+                        <td>
+                            <div class="dropdown">
+                                <button class="ellipsis-btn">•••</button>
+                                <div class="dropdown-content">
+                                    <a href="#">Edit</a>
+                                    <a href="#">Delete</a>
+                                    <a href="#">Subscribe</a>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</body>
+
+</html>
